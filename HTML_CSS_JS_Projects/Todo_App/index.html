@@ -7,20 +7,22 @@
   <body>
     <h1>Todo List</h1>
     <div id="header-task-list"></div>
-    <form>
-      <label>Task Name:</label>
-      <input class="task-name-input" type="text" />
+    <form id="todo-form">
+      <label>Task Name:
+        <input name="Task Input" class="task-name-input" type="text" />
+      </label>
 
-      <label>Due Date:</label>
-      <input class="task-due-date-input" type="text" value="MM/DD/YYYY" />
+      <label>Due Date:
+        <input name="Due Date Input" class="task-due-date-input" type="text" value="YYYY-MM-DD" />
+      </label>
 
       <input class="btn" type="Submit" value="Submit" />
     </form>
 
-    <table id="todo-task-list"> 
+    <table id="todo-task-list">
       <tr>
-        <th> Task Name </th>
-        <th> Due Date </th>
+        <th>Task Name</th>
+        <th>Due Date</th>
       </tr>
     </table>
 
