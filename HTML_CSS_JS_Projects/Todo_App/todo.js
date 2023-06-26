@@ -58,7 +58,9 @@ btn.addEventListener("click", (e) => {
       // Append the row to the table
       taskTable.appendChild(newRow);
 
-      //TODO: Clear the Values in the Input Fields in the HTML
+      // Clear the Values in the Input Fields in the HTML
+      taskNameInput.value = "";
+      dueDateInput.value = "mm/dd/yyyy";
     } else {
       // Date format is incorrect
       alert("Please add a date with the specified format mm/dd/yyyy");
