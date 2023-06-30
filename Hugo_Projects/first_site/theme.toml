@@ -10,7 +10,6 @@ tags = ["website", "starter", "responsive", "Disqus", "blog", "Tachyons", "Multi
 features = ["posts", "shortcodes", "related content", "comments"]
 min_version = "0.84.0"
 disqusShortname = PranavChati
-featured_image: '/images/gohugo-default-sample-hero-image.jpg'
 
 [author]
   name = "theNewDynamic"
