@@ -1,3 +1,6 @@
 [submodule "Hugo_Projects/themes/ananke"]
 	path = Hugo_Projects/themes/ananke
 	url = https://github.com/theNewDynamic/gohugo-theme-ananke
+[submodule "Hugo_Projects/first_site/themes/ananke"]
+	path = Hugo_Projects/first_site/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke
