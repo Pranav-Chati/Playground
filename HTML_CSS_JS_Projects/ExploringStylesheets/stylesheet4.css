@@ -1,0 +1,40 @@
+body {
+  margin: 2%;
+  background-color: black;
+  color: rgb(147, 197, 99);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.flex-container {
+  display: grid;
+}
+
+#list {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 1;
+}
+
+#same-page {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+#side-bar {
+  grid-row: 1;
+
+  border-style: solid;
+  border-color: white;
+
+  padding: 5%;
+  color: white;
+}
+
+#footer {
+  border-style: solid;
+
+  color: white;
+  font-size: small;
+  text-align: center;
+  padding: 0.5%;
+}

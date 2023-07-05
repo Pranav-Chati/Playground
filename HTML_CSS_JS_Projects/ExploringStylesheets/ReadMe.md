@@ -21,3 +21,4 @@ The biggest challenge that remains is to style the lists. This will continue to 
 The third stylesheet was pretty easy. It was very similar to the no-styles stylesheet; with a few different color options. My stylesheets will definitely change once I begin adding toggles; although, I'm not sure how it will change. I used the same principles from above about not searching up stuff I don't know, but rather finding it.
 
 **Fourth Stylesheet**
+The fourth stylesheet was also very similar to the second and third. I used a grid display; however, I think there might be a better approach to mimic the behavior of the W3Schools Stylesheet 4 that is listed. I'm going to invest this a bit further, but first, I plan to learn how to toggle between stylesheets.
