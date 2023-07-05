@@ -1,0 +1,69 @@
+body {
+  /* margin-right: 2%;
+  margin-left: 2%; */
+  font-family: "Verdana", "san-serif";
+}
+
+#title {
+  background: rgb(76, 167, 114);
+  color: white;
+
+  border-style: solid;
+  border-radius: 10px;
+
+  /* How to change spacing between the h1 and p */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#same-page {
+  margin-left: 1%;
+}
+
+/* Figure out how to get the other boxes grayed color; but the selected box to have a different color */
+
+#list > ul {
+  list-style-type: none;
+  color: white;
+}
+
+#list > ul > li {
+  border-style: solid;
+  border-radius: 5px;
+
+  background: rgb(76, 167, 114);
+  font-weight: bold;
+  font-size: 20px;
+
+  padding: 0.5%;
+}
+
+#side-bar {
+  background: rgb(86, 162, 225);
+  color: white;
+  font-size: large;
+
+  border-radius: 10px;
+
+  padding: 1%;
+}
+
+#footer {
+  border-radius: 10px;
+
+  font-size: small;
+  text-align: center;
+  background: lightgray;
+
+  padding: 10px;
+  margin-top: 1%;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
