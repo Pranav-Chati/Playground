@@ -11,3 +11,9 @@ The first stylesheet was really helpful to get more into the weeds of css. Rathe
 Initially, it was daunting to do everything alone; however, once I started getting a certain understanding of everything (after reading a few of the documnets), it definitely got a bit easier.
 
 The two biggest challenges that I will definitely encounter and have not yet figured out is a) how to style the lists without the space and b) how to make the list toggable between styles
+
+**Second Stylesheet**
+The second stylesheet was definitely easier to change some things around. Instead of playing around with flex containers though, I was using a grid approach to move around the div's. It was frustrating and interesting to make everything out.
+
+The biggest challenge that remains is to style the lists. This will continue to be repeated. I will address the CSS with the lists once I have completed the stylesheets and begin to learn how to toggle between them.
+

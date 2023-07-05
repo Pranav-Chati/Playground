@@ -1,0 +1,48 @@
+body {
+  background: rgb(193, 82, 63);
+  font-family: "Lucida Grande", Verdana, sans-serif;
+}
+
+#title {
+  color: white;
+  font-size: x-large;
+}
+
+.flex-container {
+  display: grid;
+
+  background: white;
+}
+
+#list {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+#same-page {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 2;
+}
+
+#same-page > h1,
+#same-page > h2 {
+  font-weight: bolder;
+  color: rgb(193, 82, 63);
+}
+
+#side-bar {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row: 3;
+
+  color: rgb(193, 82, 63);
+  background: rgb(241, 219, 216);
+  padding: 1%;
+}
+
+#footer {
+  color: white;
+  font-size: small;
+  text-align: center;
+}
