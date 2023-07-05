@@ -1,0 +1,23 @@
+body {
+  margin: 2%;
+  font-family: 'Gill Sans', 'Gill Sans MT' sans-serif;
+  font-size:large;
+}
+
+#title > h1,
+#same-page > h1,
+#same-page > h2,
+#side-bar > h3 {
+  color: rgb(103, 173, 91);
+}
+
+#side-bar {
+  border-style: inset;
+  padding: 1%;
+  background: rgb(241, 241, 241);
+}
+
+#footer {
+  text-align: center;
+  font-size:small;
+}

@@ -17,3 +17,7 @@ The second stylesheet was definitely easier to change some things around. Instea
 
 The biggest challenge that remains is to style the lists. This will continue to be repeated. I will address the CSS with the lists once I have completed the stylesheets and begin to learn how to toggle between them.
 
+**Third Stylesheet**
+The third stylesheet was pretty easy. It was very similar to the no-styles stylesheet; with a few different color options. My stylesheets will definitely change once I begin adding toggles; although, I'm not sure how it will change. I used the same principles from above about not searching up stuff I don't know, but rather finding it.
+
+**Fourth Stylesheet**
