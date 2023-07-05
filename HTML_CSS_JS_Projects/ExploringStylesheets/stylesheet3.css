@@ -1,7 +1,7 @@
 body {
   margin: 2%;
-  font-family: 'Gill Sans', 'Gill Sans MT' sans-serif;
-  font-size:large;
+  font-family: "Gill Sans", "Gill Sans MT" sans-serif;
+  font-size: large;
 }
 
 #title > h1,
@@ -19,5 +19,5 @@ body {
 
 #footer {
   text-align: center;
-  font-size:small;
+  font-size: small;
 }
