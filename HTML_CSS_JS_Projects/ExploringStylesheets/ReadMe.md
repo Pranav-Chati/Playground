@@ -65,3 +65,5 @@ const styleSheet = [
 `
 
 I was able to change the styling of the page by changing the href in the link tag within the head by using an array with all the stylehseet files. I figured this was a bit better than trying to uncomment all the link tags and try to activate one while deactivating the others. Changing the listElements took a while to understand. I read something online about using a DOMContentLoaded event listener to help make sure the DOM is fully loaded before running the javascript fully. I think this solution is temporary until I can think of a better fix.
+
+*The main issue was that when I was adding "active" back to the classname, there needed to be a space in front of active. This can be fixed like this where the 0 means a single space: `this.className += "0active"; 
