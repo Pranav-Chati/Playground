@@ -29,7 +29,7 @@ _Stylesheet 1_: The lists were by far the most annoying aspect of this. The reas
 
 _Stylesheet 2_: The trickiest part of the second stylesheet was the rounding. However, everything else was very similar to the previous stylesheet.
 
-_Stylesheet 3_:
+_Stylesheet 3_: The most challenging part of doing the third stylesheet was trying to get the padding / margin as similar as possible. I kind of eye-balled it, but I think there might be a better way.
 
 _Stylesheet 4_:
 
