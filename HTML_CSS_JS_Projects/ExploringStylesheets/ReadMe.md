@@ -31,8 +31,9 @@ _Stylesheet 2_: The trickiest part of the second stylesheet was the rounding. Ho
 
 _Stylesheet 3_: The most challenging part of doing the third stylesheet was trying to get the padding / margin as similar as possible. I kind of eye-balled it, but I think there might be a better way.
 
-_Stylesheet 4_:
+_Stylesheet 4_: The last one was using the concepts I've already learned, so it was easy.
 
+**List Functionality**
 I'm thinking in order to toggle the lists, I need to: a) Make the lists clickable, b) write JS code that switches which list is active, and c) write JS code that simultaneously switches the linked stylesheet.
 
 The initial script that I had was:
