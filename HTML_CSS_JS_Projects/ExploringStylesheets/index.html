@@ -25,17 +25,26 @@
       let styleSheetLink = document.getElementById("style");
 
       document.addEventListener("DOMContentLoaded", function () {
+        let linkElements = document.getElementsByClassName("a");
         let listElements = document.getElementsByClassName("li");
 
-        for (let i = 0; i < listElements.length; i++) {
-          listElements[i].addEventListener("click", function () {
-            let current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace("active", "");
-            this.className += " active";
-            styleSheetLink.href = styleSheet[i];
-          });
+        //length of both values should be the same
+        const LENGTH = listElements.length === linkElements.length ? listElements.length : 0;
+        for (let i = 0; i < LENGTH; i++) {
+          eventListener(i, linkElements, listElements);
+          eventListener(i, listElements, listElements);
         }
       });
+
+      function eventListener (index, arrayOfElements, listElements) {
+        arrayOfElements[index].addEventListener("click", function () {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", "");
+            listElements[index].className += " active";
+            styleSheetLink.href = styleSheet[index];
+          });
+
+      }
     </script>
   </head>
   <body>
