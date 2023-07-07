@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>Exploring Stylesheets</title>
-    <link id="style" rel="stylesheet" href="stylesheet1.css" />
-    <!-- <link id="style" rel="stylesheet" href="stylesheet2.css" />
-    <link id="style" rel="stylesheet" href="stylesheet3.css" />
-    <link id="style" rel="stylesheet" href="stylesheet4.css" />
-    <link id="style" rel="stylesheet" href="" /> -->
+    <!-- <link id="style" rel="stylesheet" href="stylesheet1.css" /> -->
+    <link id="style" rel="stylesheet" href="stylesheet2.css" />
+    <!-- <link id="style" rel="stylesheet" href="stylesheet3.css" /> -->
+    <!-- <link id="style" rel="stylesheet" href="stylesheet4.css" /> -->
+    <!-- <link id="style" rel="stylesheet" href="" /> -->
 
     <script>
       const styleSheet = [
@@ -19,12 +19,12 @@
       ];
 
       let styleSheetLink = document.getElementById("style");
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         let listElements = document.getElementsByClassName("li");
         console.log(listElements.length);
-        
+
         for (let i = 0; i < listElements.length; i++) {
-        console.log(i);
+          console.log(i);
           listElements[i].addEventListener("click", function () {
             let current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
@@ -32,9 +32,7 @@
             styleSheetLink.href = styleSheet[i];
           });
         }
-      })
-
-      
+      });
     </script>
   </head>
   <body>
@@ -44,8 +42,8 @@
     </div>
     <div id="body" class="flex-container">
       <ul id="list">
-        <li class="li active">Stylesheet 1</li>
-        <li class="li">Stylesheet 2</li>
+        <li class="li">Stylesheet 1</li>
+        <li class="li active">Stylesheet 2</li>
         <li class="li">Stylesheet 3</li>
         <li class="li">Stylesheet 4</li>
         <li class="li">No stylehseet</li>

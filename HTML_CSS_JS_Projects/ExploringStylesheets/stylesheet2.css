@@ -1,5 +1,5 @@
 body {
-  margin:2%;
+  margin: 2%;
   background: rgb(193, 82, 63);
   font-family: "Lucida Grande", Verdana, sans-serif;
 }
@@ -18,12 +18,46 @@ body {
 #list {
   grid-column: 5;
   grid-row: 2;
+  list-style-type: none;
+
+  padding: 0;
+  margin: 10%;
+  margin-left: -30%;
+}
+
+.li {
+  font-size: large;
+  text-align: center;
+
+  margin-top: 5%;
+  padding: 2%;
+
+  background: rgb(193, 82, 63);
+  color: white;
+
+  border-style: solid;
+  border-radius: 12px;
+}
+
+.li:hover {
+  color: rgb(193, 82, 63);
+  background: white;
+}
+
+.active {
+  pointer-events: none;
+  font-weight: bold;
+  color: rgb(193, 82, 63);
+  background: white;
 }
 
 #same-page {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row: 2;
+
+  margin-left: 1%;
+  margin-right: 10%;
 }
 
 #same-page > h1,

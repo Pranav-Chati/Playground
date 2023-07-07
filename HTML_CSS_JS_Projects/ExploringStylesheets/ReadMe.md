@@ -1,9 +1,10 @@
-### Project Name: Stylesheet Toggle
-### Frameork: HTML/CSS/JS
-### Author: Pranav Chati
-### Inspiration: https://www.w3schools.com/css/css_intro.asp
-I'm interested in trying to figure out how this CSS Demo was created using only one HTML page, but the styles change everytime. I wonder how the styles are able to switch or toggle around with the links being sent to another page.
+**Project Name: Stylesheet Toggle**
+**Frameork: HTML/CSS/JS**
+**Author: Pranav Chati**
 
+### Inspiration: https://www.w3schools.com/css/css_intro.asp
+
+I'm interested in trying to figure out how this CSS Demo was created using only one HTML page, but the styles change everytime. I wonder how the styles are able to switch or toggle around with the links being sent to another page.
 
 **First Stylesheet**
 The first stylesheet was really helpful to get more into the weeds of css. Rather than trying to search up how to do everything, I tried to force myself to either a) go through the w3schools list of CSS or b) tried to just mess around and see what would happen. I think these solutions are better because then I get to think more about how I am coding, rather than copying-pasting from stackoverflow.
@@ -24,25 +25,31 @@ The third stylesheet was pretty easy. It was very similar to the no-styles style
 The fourth stylesheet was also very similar to the second and third. I used a grid display; however, I think there might be a better approach to mimic the behavior of the W3Schools Stylesheet 4 that is listed. I'm going to invest this a bit further, but first, I plan to learn how to toggle between stylesheets.
 
 **Styling Lists**
-*Stylesheet 1*: The lists were by far the most annoying aspect of this. The reason being was because there were times when the list were not big enough vs too big, and etc. I solved the width issue by making the width auto in smaller screens but set it to a fixed 130% on larger screens. This helps the list stretch out more than it needs.
+_Stylesheet 1_: The lists were by far the most annoying aspect of this. The reason being was because there were times when the list were not big enough vs too big, and etc. I solved the width issue by making the width auto in smaller screens but set it to a fixed 130% on larger screens. This helps the list stretch out more than it needs.
 
-I'm thinking in order to toggle the lists, I need to: a) Make the lists clickable, b) write JS code that switches which list is active, and c) write JS code that simultaneously switches the linked stylesheet. 
+_Stylesheet 2_: The trickiest part of the second stylesheet was the rounding. However, everything else was very similar to the previous stylesheet.
+
+_Stylesheet 3_:
+
+_Stylesheet 4_:
+
+I'm thinking in order to toggle the lists, I need to: a) Make the lists clickable, b) write JS code that switches which list is active, and c) write JS code that simultaneously switches the linked stylesheet.
 
 The initial script that I had was:
 `
-      const styleSheet = [
-        "stylesheet1.css",
-        "stylesheet2.css",
-        "stylesheet3.css",
-        "stylesheet4.css",
-        "",
-      ];
+const styleSheet = [
+"stylesheet1.css",
+"stylesheet2.css",
+"stylesheet3.css",
+"stylesheet4.css",
+"",
+];
 
       let styleSheetLink = document.getElementById("style");
       document.addEventListener("DOMContentLoaded", function() {
         let listElements = document.getElementsByClassName("li");
         console.log(listElements.length);
-        
+
         for (let i = 0; i < listElements.length; i++) {
         console.log(i);
           listElements[i].addEventListener("click", function () {
@@ -53,8 +60,7 @@ The initial script that I had was:
           });
         }
       })
+
 `
 
 I was able to change the styling of the page by changing the href in the link tag within the head by using an array with all the stylehseet files. I figured this was a bit better than trying to uncomment all the link tags and try to activate one while deactivating the others. Changing the listElements took a while to understand. I read something online about using a DOMContentLoaded event listener to help make sure the DOM is fully loaded before running the javascript fully. I think this solution is temporary until I can think of a better fix.
-
---Time to make the other lists styled--
