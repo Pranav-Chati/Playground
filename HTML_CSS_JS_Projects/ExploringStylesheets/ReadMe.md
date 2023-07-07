@@ -22,3 +22,39 @@ The third stylesheet was pretty easy. It was very similar to the no-styles style
 
 **Fourth Stylesheet**
 The fourth stylesheet was also very similar to the second and third. I used a grid display; however, I think there might be a better approach to mimic the behavior of the W3Schools Stylesheet 4 that is listed. I'm going to invest this a bit further, but first, I plan to learn how to toggle between stylesheets.
+
+**Styling Lists**
+*Stylesheet 1*: The lists were by far the most annoying aspect of this. The reason being was because there were times when the list were not big enough vs too big, and etc. I solved the width issue by making the width auto in smaller screens but set it to a fixed 130% on larger screens. This helps the list stretch out more than it needs.
+
+I'm thinking in order to toggle the lists, I need to: a) Make the lists clickable, b) write JS code that switches which list is active, and c) write JS code that simultaneously switches the linked stylesheet. 
+
+The initial script that I had was:
+`
+      const styleSheet = [
+        "stylesheet1.css",
+        "stylesheet2.css",
+        "stylesheet3.css",
+        "stylesheet4.css",
+        "",
+      ];
+
+      let styleSheetLink = document.getElementById("style");
+      document.addEventListener("DOMContentLoaded", function() {
+        let listElements = document.getElementsByClassName("li");
+        console.log(listElements.length);
+        
+        for (let i = 0; i < listElements.length; i++) {
+        console.log(i);
+          listElements[i].addEventListener("click", function () {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += "active";
+            styleSheetLink.href = styleSheet[i];
+          });
+        }
+      })
+`
+
+I was able to change the styling of the page by changing the href in the link tag within the head by using an array with all the stylehseet files. I figured this was a bit better than trying to uncomment all the link tags and try to activate one while deactivating the others. Changing the listElements took a while to understand. I read something online about using a DOMContentLoaded event listener to help make sure the DOM is fully loaded before running the javascript fully. I think this solution is temporary until I can think of a better fix.
+
+--Time to make the other lists styled--
