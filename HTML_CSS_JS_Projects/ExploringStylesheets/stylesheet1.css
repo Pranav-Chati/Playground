@@ -1,6 +1,6 @@
 body {
-  /* margin-right: 2%;
-  margin-left: 2%; */
+  margin-right: 2%;
+  margin-left: 2%;
   font-family: "Verdana", "san-serif";
 }
 
@@ -10,7 +10,6 @@ body {
 
   border-style: solid;
   border-radius: 10px;
-
   /* How to change spacing between the h1 and p */
 }
 
@@ -19,35 +18,46 @@ body {
   flex-direction: row;
 }
 
+
 #same-page {
-  margin-left: 1%;
+  margin-left: 5%;
 }
 
 /* Figure out how to get the other boxes grayed color; but the selected box to have a different color */
 
-#list > ul {
+#list {
   list-style-type: none;
-  color: white;
+  padding: 0;
 }
 
-#list > ul > li {
-  border-style: solid;
+.li {
+  width: 130%;
+  background: lightgray;
+  color: black;
+  padding: 2%;
+
+  border-style: inset;
   border-radius: 5px;
+}
 
-  background: rgb(76, 167, 114);
+.li:hover {
+  background: white;
+}
+
+.active {
+  pointer-events:none;
+
   font-weight: bold;
-  font-size: 20px;
-
-  padding: 0.5%;
+  color: white;
+  background: rgb(76, 167, 114);
 }
 
 #side-bar {
+  border-radius: 10px;
+
   background: rgb(86, 162, 225);
   color: white;
   font-size: large;
-
-  border-radius: 10px;
-
   padding: 1%;
 }
 
@@ -65,5 +75,14 @@ body {
 @media (max-width: 800px) {
   .flex-container {
     flex-direction: column;
+  }
+
+  .li {
+    width: auto;
+    padding: 1%;
+  }
+
+  #same-page {
+    margin: 0;
   }
 }
