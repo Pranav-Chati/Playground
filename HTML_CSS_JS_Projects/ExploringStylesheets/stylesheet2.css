@@ -66,6 +66,15 @@ body {
   color: rgb(193, 82, 63);
 }
 
+.a {
+  color: rgb(193, 82, 63);
+  text-decoration: none;
+}
+
+.a:hover {
+  text-decoration: underline;
+}
+
 #side-bar {
   grid-column-start: 1;
   grid-column-end: 6;

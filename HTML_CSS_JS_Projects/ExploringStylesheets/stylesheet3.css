@@ -45,6 +45,14 @@ body {
   color: rgb(103, 173, 91);
 }
 
+.a {
+  color: black;
+}
+
+.a:hover {
+  color: rgb(103, 173, 91);
+}
+
 #side-bar {
   border-style: inset;
   padding: 1%;

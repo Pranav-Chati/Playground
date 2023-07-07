@@ -10,19 +10,12 @@ body {
 
   border-style: solid;
   border-radius: 10px;
-  /* How to change spacing between the h1 and p */
 }
 
 .flex-container {
   display: flex;
   flex-direction: row;
 }
-
-#same-page {
-  margin-left: 5%;
-}
-
-/* Figure out how to get the other boxes grayed color; but the selected box to have a different color */
 
 #list {
   list-style-type: none;
@@ -49,6 +42,18 @@ body {
   font-weight: bold;
   color: white;
   background: rgb(76, 167, 114);
+}
+
+#same-page {
+  margin-left: 5%;
+}
+
+.a {
+  color: black;
+}
+
+.a:hover {
+  text-decoration: none;
 }
 
 #side-bar {
