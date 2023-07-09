@@ -17,9 +17,7 @@ body {
   justify-content: center;
 
   color: bisque;
-  background-color: cornflowerblue;
-  font-weight: lighter;
-  border-style: solid;
+  background: cornflowerblue;
 }
 
 #todo-form > label {
@@ -43,6 +41,7 @@ body {
   margin-left: 25%;
   margin-top: 1%;
   margin-bottom: 1%;
+
   font-size: x-large;
   font-weight: bolder;
 
@@ -51,9 +50,11 @@ body {
 }
 
 #todo-task-list {
-  justify-content: center;
-  color: bisque;
-  font-size: xx-large;
+  margin-top: 1%;
   width: 100%;
+  font-size: xx-large;
+
+  background: cornflowerblue;
+  color: bisque;
   border-style: solid;
 }
