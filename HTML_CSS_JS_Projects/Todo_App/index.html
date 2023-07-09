@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <title>Todo App</title>
+    <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <h1>Todo List</h1>
-    <div id="header-task-list"></div>
+    <div id="header">
+      <h1>Todo List</h1>
+      <div id="header-task-list"></div>
+    </div>
+
     <form id="todo-form">
       <label
         >Task Name:
-        <input name="Task Input" class="task-name-input" type="text" />
+        <input name="Task Input" class="input" type="text" />
       </label>
 
       <label
         >Due Date:
         <input
           name="Due Date Input"
-          class="task-due-date-input"
+          class="input"
           type="text"
           value="mm/dd/yyyy"
         />

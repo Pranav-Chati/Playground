@@ -26,12 +26,17 @@ const btn = document.querySelector(".btn");
 
 // Event Listener for Form Submission
 btn.addEventListener("click", (e) => {
+  // Stops page from reloading when 'submit' is clicked
   e.preventDefault();
 
   // Define variables for the input fields
-  const taskNameInput = document.querySelector(".task-name-input");
-  const dueDateInput = document.querySelector(".task-due-date-input");
+  const formElements = document.querySelectorAll(".input");
+  const taskNameInput = formElements[0];
+  const dueDateInput = formElements[1]; 
 
+
+  console.log(taskNameInput);
+  console.log(dueDateInput);
   // Define a variable for the table
   const taskTable = document.querySelector("#todo-task-list");
 

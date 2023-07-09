@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  margin: 1%;
+  color: bisque;
+  background: #fa863c;
+}
+
+#header {
+  background: cornflowerblue;
+  font-size: large;
+  font-weight: bold;
+}
+
+#todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: bisque;
+  background-color: cornflowerblue;
+  font-weight: lighter;
+  border-style: solid;
+}
+
+#todo-form > label {
+  font-size: xx-large;
+  margin: 10px;
+}
+
+.input {
+  font-size: large;
+  background-color: bisque;
+  color: gray;
+  opacity: 0.8;
+}
+
+.input:focus {
+  color: black;
+}
+
+.btn {
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: x-large;
+  font-weight: bolder;
+
+  color: black;
+  background-color: bisque;
+}
+
+#todo-task-list {
+  justify-content: center;
+  color: bisque;
+  font-size: xx-large;
+  width: 100%;
+  border-style: solid;
+}
