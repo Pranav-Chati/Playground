@@ -1,41 +1,13 @@
 import React, { Component } from "react";
-import "./App.css";
-import Modal from "./components/modal";
-
-const todoItems = [
-  {
-    id: 1,
-    title: "Go to Market",
-    description: "Buy ingredients to prepare dinner",
-    completed: true,
-  },
-  {
-    id: 2,
-    title: "Study",
-    description: "Read Algebra and History textbook for the upcoming test",
-    completed: false,
-  },
-  {
-    id: 3,
-    title: "Sammy's books",
-    description: "Go to library to return Sammy's books",
-    completed: true,
-  },
-  {
-    id: 4,
-    title: "Article",
-    description: "Write article on how to use Django with React",
-    completed: false,
-  },
-];
+import axios from "axios";
+import Modal from "./components/Modal";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       viewCompleted: false,
-      todoList: todoItems,
+      todoList: [],
       modal: false,
       activeItem: {
         title: "",
@@ -45,13 +17,32 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    this.refreshList();
+  }
+
+  refreshList = () => {
+    axios
+      .get("/api/todos")
+      .then((res) => this.setState({ todoList: res.data }))
+      .catch((err) => console.log(err));
+  };
+
   toggle = () => {
     this.setState({ modal: !this.state.modal });
   };
 
   handleSubmit = (item) => {
     this.toggle();
-    alert("save" + JSON.stringify(item));
+
+    if (item.id) {
+      axios
+        .put(`/api/todos/${item.id}/`, item)
+        .then((res) => this.refreshList());
+      return;
+    }
+    axios.post("/api/todos/", item).then((res) => this.refreshList());
+
   };
 
   handleDelete = (item) => {
@@ -153,10 +144,11 @@ class App extends Component {
         </div>
         {this.state.modal ? (
           <Modal
-            activteItem = {this.state.activeItem} 
+            activeItem={this.state.activeItem}
             toggle={this.toggle}
             onSave={this.handleSubmit}
-            /> ): null}
+          />
+        ) : null}
       </main>
     );
   }
