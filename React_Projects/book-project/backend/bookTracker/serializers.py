@@ -7,4 +7,4 @@ class BookSerializer (serializers.ModelSerializer):
     # the fields must be valid model names, but does not include all
     class Meta:
         model = Book
-        fields = ('id', 'title', 'description', 'author')
+        fields = ('id', 'title', 'author')
