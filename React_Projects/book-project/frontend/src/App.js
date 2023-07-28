@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
+
 import {
   ChakraBaseProvider,
   FormControl,
+  FormLabel,
   HStack,
   IconButton,
   Input,
@@ -15,6 +17,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      author: "",
+      title: "",
       bookshelf: [],
     };
   }
@@ -30,17 +34,26 @@ class App extends React.Component {
       .catch((error) => console.log(error));
   };
 
-  handleSubmit = (e) => {
-
+  handleSubmit = () => {
     axios
       .post("http://localhost:8000/api/books/", {
-        author: e.target.authorName.value,
-        title: e.target.bookName.value,
+        author: this.state.author,
+        title: this.state.title,
       })
-      .then((res) => this.refreshList())
+      .then((res) => this.refreshlist())
+      .catch((error) => console.log(error));
 
-    //this gets the bookName by using the name value
-    console.log(e.target.bookName.value);
+    // Clear the state ...
+    this.setState({
+      author: "",
+      title: "",
+    });
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
   };
 
   renderBookShelf = () => {
@@ -52,25 +65,34 @@ class App extends React.Component {
   render() {
     return (
       <ChakraBaseProvider>
-        <form onSubmit={this.handleSubmit}>
-          <input name="bookName" placeholder="book title" />
-          <input name="authorName" placeholder="author" />
-          <button type="submit">Submit</button>
-        </form>
-
-        {/* there is a difference between onClick and onSubmit in terms of events */}
-        {/* <FormControl>
+        <FormControl>
           <HStack>
-            <Input name="bookName" placeholder="book title" />
-            <Input name="authorName" placeholder="author" />
+            <Input
+              id="titleInput"
+              name="title"
+              placeholder="title"
+              type="text"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
+            <Input
+              id="authorInpuet"
+              name="author"
+              placeholder="author"
+              type="text"
+              value={this.state.author}
+              onChange={this.handleChange}
+            />
+
             <IconButton
               variant="outline"
               aria-label="Search database"
               icon={<SearchIcon />}
-              onSubmit={this.handleSubmit}
+              type="submit"
+              onClick={this.handleSubmit}
             />
           </HStack>
-        </FormControl> */}
+        </FormControl>
 
         <UnorderedList>{this.renderBookShelf()}</UnorderedList>
       </ChakraBaseProvider>
