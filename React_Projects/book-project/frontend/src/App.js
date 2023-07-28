@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bookList: [],
+      bookshelf: [],
     };
   }
 
@@ -23,38 +23,56 @@ class App extends React.Component {
     this.refreshlist();
   }
 
-  refreshlist() {
+  refreshlist = () => {
     axios
       .get("http://localhost:8000/api/books/")
-      .then((res) => this.setState({ bookList: res.data }))
-      .catch((err) => console.log(err));
-  }
+      .then((result) => this.setState({ bookshelf: result.data }))
+      .catch((error) => console.log(error));
+  };
 
-  renderBookList = () => {
-    return this.state.bookList.map((book) => (
+  handleSubmit = (e) => {
+
+    axios
+      .post("http://localhost:8000/api/books/", {
+        author: e.target.authorName.value,
+        title: e.target.bookName.value,
+      })
+      .then((res) => this.refreshList())
+
+    //this gets the bookName by using the name value
+    console.log(e.target.bookName.value);
+  };
+
+  renderBookShelf = () => {
+    return this.state.bookshelf.map((book) => (
       <ListItem key={book.id}> {book.title} </ListItem>
     ));
   };
 
-  // When Search Icon is Clicked, add the title to the list
-
   render() {
     return (
       <ChakraBaseProvider>
-        <FormControl>
+        <form onSubmit={this.handleSubmit}>
+          <input name="bookName" placeholder="book title" />
+          <input name="authorName" placeholder="author" />
+          <button type="submit">Submit</button>
+        </form>
+
+        {/* there is a difference between onClick and onSubmit in terms of events */}
+        {/* <FormControl>
           <HStack>
-            <Input id="bookName" placeholder="book title" />
-            <Input id="authorName" placeholder="author" />
+            <Input name="bookName" placeholder="book title" />
+            <Input name="authorName" placeholder="author" />
             <IconButton
               variant="outline"
               aria-label="Search database"
               icon={<SearchIcon />}
-              onClick={this.handleSubmit}
+              onSubmit={this.handleSubmit}
             />
           </HStack>
-        </FormControl>
+        </FormControl> */}
 
-        <UnorderedList>{this.renderBookList()}</UnorderedList>
+        <UnorderedList>{this.renderBookShelf()}</UnorderedList>
       </ChakraBaseProvider>
     );
   }
