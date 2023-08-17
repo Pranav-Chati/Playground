@@ -20,16 +20,10 @@ function loadAsyncScript(src) {
 
 const extractAddress = (place) => {
   const address = {
+    street: "",
     city: "",
     state: "",
     zip: "",
-    country: "",
-    plain() {
-      const city = this.city ? this.city + ", " : "";
-      const zip = this.zip ? this.zip + ", " : "";
-      const state = this.state ? this.state + ", " : "";
-      return city + zip + state + this.country;
-    },
   };
 
   if (!Array.isArray(place?.address_components)) {
@@ -39,6 +33,14 @@ const extractAddress = (place) => {
   place.address_components.forEach((component) => {
     const types = component.types;
     const value = component.long_name;
+
+    if (types.includes("street_number")) {
+      address.street = `${component.long_name} ${address.street}`;
+    }
+
+    if (types.includes("route")) {
+      address.street += component.short_name;
+    }
 
     if (types.includes("locality")) {
       address.city = value;
@@ -50,10 +52,6 @@ const extractAddress = (place) => {
 
     if (types.includes("postal_code")) {
       address.zip = value;
-    }
-
-    if (types.includes("country")) {
-      address.country = value;
     }
   });
 
@@ -93,9 +91,6 @@ function App() {
     );
   };
 
-
- 
-
   // load map script after mounted
   useEffect(() => {
     initMapScript().then(() => initAutocomplete());
@@ -114,6 +109,9 @@ function App() {
 
         <div className="address">
           <p>
+            Address: <span>{address.street}</span>
+          </p>
+          <p>
             City: <span>{address.city}</span>
           </p>
           <p>
@@ -121,9 +119,6 @@ function App() {
           </p>
           <p>
             Zip: <span>{address.zip}</span>
-          </p>
-          <p>
-            Country: <span>{address.country}</span>
           </p>
         </div>
       </div>
