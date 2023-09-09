@@ -14,16 +14,12 @@ decreaseBtn.addEventListener("click", decreaseCounter);
 increaseBtn.addEventListener("click", increaseCounter);
 resetBtn.addEventListener("click", resetCounter);
 
-// interesting behavior, when `counter` was added as a parameter to this function, 
-//the decrease button would show NaN and Increase button would show some "[object PointerEvent]1"
-function decreaseCounter(counter) {
-  console.log(counter);
+function decreaseCounter() {
   counter -= 1;
   changeColorText(counter);
 }
 
-function increaseCounter(counter) {
-  console.log(counter);
+function increaseCounter() {
   counter += 1;
   changeColorText(counter);
 }
