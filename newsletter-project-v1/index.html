@@ -14,15 +14,14 @@
     <pre id="content" style="white-space: pre-wrap"></pre>
 
     <script type="text/javascript">
-
       /* exported gapiLoaded */
       /* exported gisLoaded */
       /* exported handleAuthClick */
       /* exported handleSignoutClick */
 
       // TODO(developer): Set to client ID and API key from the Developer Console
-      const CLIENT_ID = "CLIENTID";
-      const API_KEY = "APIKEY";
+      const CLIENT_ID = env.CLIENT_ID;
+      const API_KEY = env.API_KEY;
 
       // Discovery doc URL for APIs used by the quickstart
       const DISCOVERY_DOC =
