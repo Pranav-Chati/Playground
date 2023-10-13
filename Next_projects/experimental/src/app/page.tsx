@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Sidebar from "./sidebar";
+// import Sidebar from "./sidebarExpenz";
+import Sidebar from "./sidebarNelt";
 
 export default function Home() {
   return <Sidebar />;
