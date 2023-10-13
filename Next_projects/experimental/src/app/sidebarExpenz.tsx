@@ -11,6 +11,7 @@ export default function Sidebar() {
           alt="dsp"
           width={100}
           height={100}
+          priority
         />
         <h1>Pranav Chati</h1>
         <p className="metadata"> President </p>

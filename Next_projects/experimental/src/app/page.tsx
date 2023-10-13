@@ -1,9 +1,10 @@
 import Image from "next/image";
 // import Sidebar from "./sidebarExpenz";
 import Sidebar from "./sidebarNelt";
+import MainPageNelt from "./mainpageNelt";
 
 export default function Home() {
-  return <Sidebar />;
+  return <MainPageNelt />;
   // return (
   //   <main className="flex min-h-screen flex-col items-center justify-between p-24">
   //     <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
