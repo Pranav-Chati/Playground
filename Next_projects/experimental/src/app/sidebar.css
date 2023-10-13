@@ -1,0 +1,31 @@
+#sidebar {
+  background: black;
+  color: white;
+  padding: 2%;
+}
+
+#personalInformation {
+  margin-bottom: 5%;
+}
+
+#personalInformation > h1 {
+  margin-bottom: -1%;
+}
+
+#gloLogo {
+  border-radius: 25px;
+  margin-bottom: -1%;
+}
+
+.metadata {
+  color: gray;
+  font-size: medium;
+}
+
+#routeLinks {
+  color: gray;
+}
+
+#routeLinks :active {
+  color: white;
+}
