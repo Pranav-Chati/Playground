@@ -1,14 +1,28 @@
+import React from "react";
 import Image from "next/image";
 import "./mainpageNelt.css";
 
-export default function MainPageNelt() {
+export default async function MainPageNelt() {
+  const response = await fetch("http://localhost:8000/api/content/");
+  const data = await response.json();
+  const content = await data.map((newsletter: typeof data) => {
+    return (
+      <tr key={newsletter.id}>
+        <td>{newsletter.title}</td>
+        <td>{newsletter.createdAt}</td>
+      </tr>
+    );
+  });
 
   return (
     <div>
       {/* Title */}
       {/* Each List item has preview logo, a title, and a date on the far right */}
-
       <h1> Morning Brew </h1>
+      <table>
+        <tbody>{content}</tbody>
+      </table>
+
       <table id="newsList">
         <tbody>
           <tr>
@@ -29,6 +43,7 @@ export default function MainPageNelt() {
               <p>Sep 30, 2020</p>
             </td>
           </tr>
+
           <tr>
             <td>
               <Image
@@ -37,6 +52,7 @@ export default function MainPageNelt() {
                 alt="dsp"
                 width={100}
                 height={100}
+                priority
               />
             </td>
             <td>
