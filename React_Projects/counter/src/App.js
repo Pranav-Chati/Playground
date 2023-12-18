@@ -1,15 +1,20 @@
-
-import React, { useState } from "react";
+import BasicComponent from "./BasicComponent";
+import { Component, Component1, Component2 } from "./Component";
+import Props from "./Props";
+import Counter from "./Counter";
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // go from component to props, to states, to hooks
 
   return (
     <div className="App">
-      <h1>This is an example of DOM Manipulation in React</h1>
-      <p>The count: {count}</p>
-      <button onClick={() => setCount(count + 1)}> Increment the Button </button>
-      <button onClick={() => setCount(count - 1)}> Decrement the Button </button>
+      {/* <BasicComponent /> */}
+      {/* <Component />
+      <Component1 />
+      <Component2 /> */}
+      {/* <Props name="Pranav" /> */}
+      <Counter />
     </div>
   );
 }
