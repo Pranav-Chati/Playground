@@ -20,7 +20,7 @@ from rest_framework import routers
 from bookTracker import views
 
 router = routers.DefaultRouter()
-router.register(r'bookTracker', views.BookView, 'bookTracker')
+router.register(r'books', views.BookView, 'books')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
